@@ -1,0 +1,32 @@
+{
+  "name": "agent",
+  "version": "0.0.1",
+  "description": "agent core",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "precompile": "mkdir dist && coffeescript-concat -I core -o dist/precompile.coffee",
+    "pack": "cat dist/precompile.coffee index.coffee > dist/index.coffee && rm dist/precompile.coffee && coffee -c dist/index.coffee && rm dist/index.coffee",
+    "build": "npm run clean && npm run precompile && npm run pack"
+  },
+  "keywords": [
+    "agent"
+  ],
+  "author": "rabrux",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.12.2",
+    "coffeescript-concat": "^1.0.14"
+  },
+  "dependencies": {
+    "socket.io": "^1.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabrux/agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rabrux/agent/issues"
+  },
+  "homepage": "https://github.com/rabrux/agent#readme"
+}
