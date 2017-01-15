@@ -103,6 +103,11 @@
       })) {
         return true;
       }
+      if (level !== '*' && this.levels.find(function(l) {
+        return l === '@';
+      })) {
+        return true;
+      }
       return this.levels.find(function(l) {
         return l === level;
       });

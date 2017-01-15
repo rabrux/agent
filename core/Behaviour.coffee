@@ -24,6 +24,9 @@ class Behaviour
     if level isnt '*' and @levels.find( ( l ) -> return l == '*' )
       return true
 
+    if level isnt '*' and @levels.find( ( l ) -> return l == '@' )
+      return true
+
     @levels.find ( l ) ->
       return l == level
 
